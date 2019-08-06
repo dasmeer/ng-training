@@ -2,7 +2,7 @@
 <button (click)="makeItDay()" *ngIf='!isDay'>make it DAY</button>
 <button (click)="makeItNight()" *ngIf='isDay'>make it NIGHT</button>
 
-<div class="community" ngIf="houses else loading">
+<div class="community" *ngIf="houses else loading">
     <div class="house" *ngFor="let house of houses; let ind = index" [ngClass]="getColourClass(ind)">
         <div class="floor" *ngFor="let f of floors">
             <div class="block" *ngFor="let i of [].constructor(house)">
