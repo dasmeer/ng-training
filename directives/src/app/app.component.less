@@ -1,9 +1,11 @@
+@size : 50px;
+
 .community{
     margin-top: 20px;
 }
 
 .house{
-    margin-right: 50px;
+    margin-right: @size;
     float: left;
 }
 
@@ -19,14 +21,14 @@
 
 .block {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: @size;
+    height: @size;
   }
   
   .window {
     position: absolute;
-    width: 25px;
-    height: 25px;
+    width: @size/2;
+    height: @size/2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

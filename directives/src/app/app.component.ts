@@ -7,7 +7,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-    title = 'directives';
     isDay = true;
     floors = Array(3);
     houses = [3, 2, 3];
