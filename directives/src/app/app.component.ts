@@ -16,7 +16,11 @@ export class AppComponent {
     makeItNight = () => this.isDay = false;
 
     getColourClass = (houseIndex) => {
-        
+        switch (houseIndex) {
+            case 0: return "blue";
+            case 1: return "green";
+            case 2: return "red";
+        }
     };
 
     isLighted = () => this.isDay ? false : Math.random() > .4;

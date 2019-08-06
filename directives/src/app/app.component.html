@@ -3,14 +3,10 @@
 <button (click)="makeItNight()" *ngIf='isDay'>make it NIGHT</button>
 
 <div class="community">
-    <div class="house" *ngFor="let house of houses; let ind = index">
+    <div class="house" *ngFor="let house of houses; let ind = index" [ngClass]="getColourClass(ind)">
         <div class="floor" *ngFor="let f of floors">
             <div class="block" *ngFor="let i of [].constructor(house)">
                 <div class="window" [class.lighted]="!isDay && isLighted()"></div>
-            </div>
-        </div>
-        <div class="floor">
-            <div class="block" *ngFor="let i of [].constructor(house)">
             </div>
         </div>
         <div class="house-number">{{ind+1}}</div>
