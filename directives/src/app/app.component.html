@@ -1,9 +1,18 @@
-<h1>
-    {{title}}
-</h1>
+<h3>DAY = {{isDay}}</h3>
+<button (click)="makeItDay()" *ngIf='!isDay'>make it DAY</button>
+<button (click)="makeItNight()" *ngIf='isDay'>make it NIGHT</button>
 
-<h3>ifValue = {{ifValue}}</h3>
-<button (click)="makeItTrue()" *ngIf='!ifValue'>make it TRUE</button>
-<button (click)="makeItFalse()" *ngIf='ifValue'>make it FALSE</button>
-
-<!-- test -->
+<div class="community">
+    <div class="house" *ngFor="let house of houses; let ind = index">
+        <div class="floor" *ngFor="let f of floors">
+            <div class="block" *ngFor="let i of [].constructor(house)">
+                <div class="window" [class.lighted]="!isDay && isLighted()"></div>
+            </div>
+        </div>
+        <div class="floor">
+            <div class="block" *ngFor="let i of [].constructor(house)">
+            </div>
+        </div>
+        <div class="house-number">{{ind+1}}</div>
+    </div>
+</div>

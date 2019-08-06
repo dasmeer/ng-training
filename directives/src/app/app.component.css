@@ -1,0 +1,38 @@
+.community{
+    margin-top: 20px;
+}
+
+.house{
+    margin-right: 50px;
+    float: left;
+}
+
+.house-number{
+    text-align: center;
+}
+
+.floor{
+    display: flex;
+}
+
+.block {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: darkblue;
+  }
+  
+  .window {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkgray;
+  }
+
+  .window.lighted{
+      background-color: darkgoldenrod;
+  }
+  
