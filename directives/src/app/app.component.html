@@ -7,7 +7,7 @@
          class="house" [ngClass]="getColourClass(ind)">
         <div class="floor" *ngFor="let f of floors">
             <div class="block" *ngFor="let i of [].constructor(house)">
-                <div class="window" [class.lighted]="!isDay && isLighted()"></div>
+                <div class="window" [class.lighted]="!isDay && isLighted()" highlight></div>
             </div>
         </div>
         <div class="house-number" [ngStyle]="getHouseNumberStyle(house)">
