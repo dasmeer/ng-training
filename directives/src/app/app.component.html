@@ -3,13 +3,18 @@
 <button (click)="makeItNight()" *ngIf='isDay'>make it NIGHT</button>
 
 <div class="community" *ngIf="houses else loading">
-    <div class="house" *ngFor="let house of houses; let ind = index" [ngClass]="getColourClass(ind)">
+    <div *ngFor="let house of houses; let ind = index; last as isLast; first as isFirst"
+         class="house" [ngClass]="getColourClass(ind)">
         <div class="floor" *ngFor="let f of floors">
             <div class="block" *ngFor="let i of [].constructor(house)">
                 <div class="window" [class.lighted]="!isDay && isLighted()"></div>
             </div>
         </div>
-        <div class="house-number" [ngStyle]="getHouseNumberStyle(house)">{{ind+1}}</div>
+        <div class="house-number" [ngStyle]="getHouseNumberStyle(house)">
+            <span *ngIf="isFirst">&rarr;</span>
+            {{ind+1}}
+            <span *ngIf="isLast">&larr;</span>    
+        </div>
     </div>
 </div>
 

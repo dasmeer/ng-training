@@ -22,7 +22,9 @@ export class AppComponent {
         }
     };
 
-    getHouseNumberStyle = (floorsCount) => ({ fontWeight: `${100 * floorsCount * 2}` });
+    getHouseNumberStyle = (floorsCount) =>
+        ({ fontWeight: `${100 * floorsCount * 2}` });
 
-    isLighted = () => this.isDay ? false : Math.random() > .4;
+    isLighted = () =>
+        this.isDay ? false : Math.random() > .4;
 }
