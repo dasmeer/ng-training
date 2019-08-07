@@ -19,5 +19,5 @@
 </div>
 
 <ng-template #loading>
-    <div>Community is empty, no houses present(</div>
+    <div *unless="houses">Community is empty, no houses present(</div>
 </ng-template>
