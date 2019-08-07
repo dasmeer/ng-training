@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-root',
@@ -21,10 +20,8 @@ export class AppComponent {
             case 2: return "red";
         }
     };
-
     getHouseNumberStyle = (floorsCount) =>
         ({ fontWeight: `${100 * floorsCount * 2}` });
-
     isLighted = () =>
         this.isDay ? false : Math.random() > .4;
 }
