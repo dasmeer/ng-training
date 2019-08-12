@@ -7,6 +7,8 @@ import { OnPushComponent } from './on-push/on-push.component';
 import { ManualComponent } from './manual/manual.component';
 import { OutsiderComponent } from './outsider/outsider.component';
 
+import {FormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { OutsiderComponent } from './outsider/outsider.component';
     OutsiderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

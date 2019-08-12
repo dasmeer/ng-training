@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { PersonDefault } from '../person';
 
 @Component({
-  selector: 'app-on-push',
-  templateUrl: './on-push.component.html',
-  styleUrls: ['./on-push.component.less']
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-on-push',
+    templateUrl: './on-push.component.html',
+    styleUrls: ['./on-push.component.less']
 })
-export class OnPushComponent implements OnInit {
+export class OnPushComponent {
+    @Input() person: PersonDefault;
 
-  constructor() { }
+    constructor() {
+        this.person = new PersonDefault('OnPush', 2);
+    }
 
-  ngOnInit() {
-  }
+    get runChangeDetection() {
+        console.log('checking ON-PUSH view');
+        return null;
+    }
 
+    onClick() {
+        this.person.Age = Math.floor(Math.random() * 100);
+    }
 }

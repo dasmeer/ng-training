@@ -1,7 +1,7 @@
 <div class="component-body">
     <h1>DEFAULT</h1>
     <div>Name</div>
-    <input [value]="person.Name" (input)="person.Name = $event.target.value" />
+    <input [(ngModel)]="person.Name"  />
     <div>Age</div>
     <input [value]="person.Age" (input)="person.Age = $event.target.value"/>
     <div> {{person.Name}}, {{person.Age}} </div>

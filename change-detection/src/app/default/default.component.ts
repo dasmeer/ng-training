@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PersonDefault } from './person';
+import { PersonDefault } from '../person';
 
 @Component({
     selector: 'app-default',
@@ -10,7 +10,7 @@ export class DefaultComponent {
     person: PersonDefault;
 
     constructor() {
-        this.person = new PersonDefault('Default', 19);
+        this.person = new PersonDefault('Default', 1);
     }
 
     get runChangeDetection() {

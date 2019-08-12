@@ -1,3 +1,10 @@
 <div class="component-body">
-  on-push works!
+    <h1>ON-PUSH</h1>
+    <button (click)="onClick()">this.person.Age = Math.floor(Math.random() * 100);</button>
+    <div>Name</div> 
+    <input [value]="person.Name" />
+    <div>Age</div>
+    <input [value]="person.Age" />
+    <div> {{person.Name}}, {{person.Age}} </div>
+    {{runChangeDetection}}
 </div>
