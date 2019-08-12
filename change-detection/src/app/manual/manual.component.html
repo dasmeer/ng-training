@@ -1,3 +1,10 @@
 <div class="component-body">
-  manual works!
+    <h1>MANUAL</h1>
+    <button (click)="onClick()">this.cd.detectChanges();</button>
+    <div>Name</div>
+    <input [(ngModel)]="person.Name" />
+    <div>Age</div>
+    <input [(ngModel)]="person.Age" />
+    <div> {{person.Name}}, {{person.Age}} </div>
+    {{runChangeDetection}}
 </div>
