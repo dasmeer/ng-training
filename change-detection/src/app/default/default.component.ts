@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PersonDefault } from './person';
 
 @Component({
-  selector: 'app-default',
-  templateUrl: './default.component.html',
-  styleUrls: ['./default.component.less']
+    selector: 'app-default',
+    templateUrl: './default.component.html',
+    styleUrls: ['./default.component.less']
 })
-export class DefaultComponent implements OnInit {
+export class DefaultComponent {
+    person: PersonDefault;
 
-  constructor() { }
+    constructor() {
+        this.person = new PersonDefault('Default', 19);
+    }
 
-  ngOnInit() {
-  }
-
+    get runChangeDetection() {
+        console.log('checking DEFAUL view');
+        return null;
+    }
 }
