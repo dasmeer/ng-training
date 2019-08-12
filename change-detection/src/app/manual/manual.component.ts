@@ -1,17 +1,17 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { PersonDefault } from '../person';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { Person } from '../models/person';
 
 @Component({
     selector: 'app-manual',
     templateUrl: './manual.component.html',
     styleUrls: ['./manual.component.less']
 })
-export class ManualComponent implements OnInit {
-    person: PersonDefault;
+export class ManualComponent {
+    person: Person;
 
     constructor(private cd: ChangeDetectorRef) {
         cd.detach();
-        this.person = new PersonDefault('Manual', 3);
+        this.person = new Person('Manual', 3);
     }
 
     ngOnInit() {
@@ -24,6 +24,7 @@ export class ManualComponent implements OnInit {
     }
 
     onClick() {
+        this.person.Age = Math.floor(Math.random() * 100);
         this.cd.detectChanges();
     }
 }

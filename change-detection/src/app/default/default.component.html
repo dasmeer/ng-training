@@ -1,9 +1,12 @@
 <div class="component-body">
     <h1>DEFAULT</h1>
+    <div class="control">
+        <input type="checkbox" [(ngModel)]="loggerIsOn" id="loggerIsOn"><label for="loggerIsOn">loggerIsOn?</label>
+    </div>
     <div>Name</div>
-    <input [(ngModel)]="person.Name"  />
+    <input [(ngModel)]="person.Name" />
     <div>Age</div>
-    <input [value]="person.Age" (input)="person.Age = $event.target.value"/>
+    <input [value]="person.Age" (input)="person.Age = $event.target.value" />
     <div> {{person.Name}}, {{person.Age}} </div>
     {{runChangeDetection}}
 </div>

@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { PersonDefault } from '../person';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Person } from '../models/person';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,10 +8,10 @@ import { PersonDefault } from '../person';
     styleUrls: ['./on-push.component.less']
 })
 export class OnPushComponent {
-    @Input() person: PersonDefault;
+    person: Person;
 
     constructor() {
-        this.person = new PersonDefault('OnPush', 2);
+        this.person = new Person('OnPush', 2);
     }
 
     get runChangeDetection() {

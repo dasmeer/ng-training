@@ -1,3 +1,12 @@
 <div class="component-body">
-  outsider works!
+    <h1>OUTSIDER</h1>
+    <div class="control">
+        <button (click)="click()" (mousedown)="mouseDown()">this.person.Age = Math.floor(Math.random() * 100)</button>
+    </div>
+    <div>Name</div>
+    <input [ngModel]="person.Name" />
+    <div>Age</div>
+    <input [ngModel]="person.Age" />
+    <div> {{person.Name}}, {{person.Age}} </div>
+    {{runChangeDetection}}
 </div>

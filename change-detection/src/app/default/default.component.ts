@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PersonDefault } from '../person';
+import { Component} from '@angular/core';
+import { Person } from '../models/person';
 
 @Component({
     selector: 'app-default',
@@ -7,14 +7,16 @@ import { PersonDefault } from '../person';
     styleUrls: ['./default.component.less']
 })
 export class DefaultComponent {
-    person: PersonDefault;
+    person: Person;
+    loggerIsOn = true;
 
     constructor() {
-        this.person = new PersonDefault('Default', 1);
+        this.person = new Person('Default', 1);
     }
-
     get runChangeDetection() {
-        console.log('checking DEFAUL view');
+        if (this.loggerIsOn){
+            console.log('checking DEFAUL view');
+        }
         return null;
     }
 }
