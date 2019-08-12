@@ -1,5 +1,5 @@
 import { Component, NgZone, ChangeDetectionStrategy } from '@angular/core';
-import { Person } from '../models/person';
+import { Person } from '../../models/person';
 
 @Component({
     changeDetection : ChangeDetectionStrategy.OnPush,
