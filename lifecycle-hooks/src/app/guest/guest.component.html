@@ -1,0 +1,10 @@
+<div>
+    <div [class.left]="editMode">
+        <button (click)="throwOut()">throw out</button>
+        <span (click)="edit()" *ngIf="!editMode">{{name}}</span>
+    </div>
+    <div *ngIf="editMode">
+        <input [(ngModel)]="name" />
+        <button (click)="save()">ok</button>
+    </div>
+</div>

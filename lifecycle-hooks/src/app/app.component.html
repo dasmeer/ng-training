@@ -1,2 +1,10 @@
+<!-- <h1>Hi<span *ngIf="name">, </span>{{name}}!</h1> -->
+<label>Guest name:</label>&nbsp;
+<input [(ngModel)]="newGuestName" />&nbsp;
+<button (click)="addInList()">add <span *ngIf="newGuestName">{{newGuestName | uppercase}} </span>in the list</button>
 
+<h3>guest list:</h3>
 
+<div *ngFor="let name of guests">
+    <app-guest [name]="name"></app-guest>
+</div>
