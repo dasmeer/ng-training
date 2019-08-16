@@ -12,7 +12,6 @@ export class AppComponent {
     constructor(private logger: LogService){    }
 
     ngAfterViewChecked() {
-        // console.log(`------------------${this.checkNumber++}------------------`);
-        this.logger.log(`------------------${this.checkNumber++}------------------`)
+        this.logger.log(`------------------ ${this.checkNumber++} ------------------`)
     }
 }
