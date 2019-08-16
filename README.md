@@ -1,23 +1,23 @@
 # ng-training
-DIRECTIVES
+ANGULAR DIRECTIVES
 
     ngIf
     ngFor
     ngTemplate
-    structural & attributes directives
-    (implement custom directives)
+    angular structural and attributes directives
+    (implement custom directives on angular)
     ngStyle / ngClass / class binding
     change detection
 
 
-CHANGE DETECTION STRATEGIES
+ANGULAR CHANGE DETECTION STRATEGIES
 
     default
     OnPush
     (turn-off/manual)
     (outsider)
 
-LIFE CYCLE HOOKS 
+ANGULAR LIFE CYCLE HOOKS 
 
     ngOnInit
     ngDoCheck
@@ -27,7 +27,7 @@ LIFE CYCLE HOOKS
     ngAfterViewChecked 
     ngOnDestroy 
 
-ANIMATION
+ANGULAR ANIMATION
 
 how to run
 
