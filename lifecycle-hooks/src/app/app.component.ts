@@ -1,5 +1,6 @@
 import { Component, SimpleChanges, OnChanges } from '@angular/core';
 import { GuestSecurityService } from './guest-security.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -8,10 +9,11 @@ import { GuestSecurityService } from './guest-security.service';
 })
 export class AppComponent {
     newGuestName: string;
-    guests = ['Gustavo Tretty', 'Madonna', 'Will Man'];
+    guests = ['Gustavo Tretty', 'Madonna'];
+    securitySubscription: Subscription;
 
-    constructor(private securityService: GuestSecurityService) {
-        securityService.guestThrownOut.subscribe(name =>
+    constructor(securityService: GuestSecurityService) {
+        this.securitySubscription = securityService.guestThrownOut.subscribe(name =>
             this.guests = this.guests.filter(x => x !== name)
         );
     }
@@ -36,20 +38,21 @@ export class AppComponent {
         console.log(`ngAfterContentInit - ${this.loggerName}`);
     }
 
-    ngAfterContentChecked(){
+    ngAfterContentChecked() {
         console.log(`ngAfterContentChecked - ${this.loggerName}`);
     }
 
-    ngAfterViewInit(){
+    ngAfterViewInit() {
         console.log(`ngAfterViewInit - ${this.loggerName}`);
     }
 
-    ngAfterViewChecked(){
+    ngAfterViewChecked() {
         console.log(`ngAfterViewChecked - ${this.loggerName}`);
         console.log(`---------------------------------------`);
     }
 
     ngOnDestroy() {
         console.log(`ngOnDestroy - ${this.loggerName}`);
+        this.securitySubscription.unsubscribe();
     }
 }
