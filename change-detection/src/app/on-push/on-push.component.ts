@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Person } from '../../models/person';
+import { LogService } from '../log.service';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,12 +11,13 @@ import { Person } from '../../models/person';
 export class OnPushComponent {
     person: Person;
 
-    constructor() {
+    constructor(private logger: LogService) {
         this.person = new Person('OnPush', 2);
     }
 
     get runChangeDetection() {
-        console.log('checking ON-PUSH view');
+        // console.log('checking ON-PUSH view');
+        this.logger.log('checking ON-PUSH view');
         return null;
     }
 

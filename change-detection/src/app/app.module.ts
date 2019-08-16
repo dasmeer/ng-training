@@ -8,6 +8,7 @@ import { ManualComponent } from './manual/manual.component';
 import { OutsiderComponent } from './outsider/outsider.component';
 
 import { FormsModule } from '@angular/forms';
+import { LogComponent } from './log/log.component';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
         DefaultComponent,
         OnPushComponent,
         ManualComponent,
-        OutsiderComponent
+        OutsiderComponent,
+        LogComponent
     ],
     imports: [
         BrowserModule, FormsModule

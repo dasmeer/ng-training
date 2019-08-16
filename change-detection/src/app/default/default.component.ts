@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Person } from '../../models/person';
+import { LogService } from '../log.service';
 
 @Component({
     selector: 'app-default',
@@ -10,12 +11,13 @@ export class DefaultComponent {
     person: Person;
     loggerIsOn = true;
 
-    constructor() {
+    constructor(private logger: LogService) {
         this.person = new Person('Default', 1);
     }
     get runChangeDetection() {
         if (this.loggerIsOn){
-            console.log('checking DEFAUL view');
+            // console.log('checking DEFAUL view');
+            this.logger.log('checking DEFAUL view');
         }
         return null;
     }

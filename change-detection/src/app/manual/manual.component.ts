@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Person } from '../../models/person';
+import { LogService } from '../log.service';
 
 @Component({
     selector: 'app-manual',
@@ -9,7 +10,7 @@ import { Person } from '../../models/person';
 export class ManualComponent {
     person: Person;
 
-    constructor(private cd: ChangeDetectorRef) {
+    constructor(private cd: ChangeDetectorRef, private logger: LogService) {
         cd.detach();
         this.person = new Person('Manual', 3);
     }
@@ -19,7 +20,8 @@ export class ManualComponent {
     }
 
     get runChangeDetection() {
-        console.log('checking MANUAL view');
+        // console.log('checking MANUAL view');
+        this.logger.log('checking MANUAL view');
         return null;
     }
 

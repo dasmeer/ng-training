@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { LogService } from './log.service';
 
 @Component({
     selector: 'app-root',
@@ -8,11 +9,10 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
 export class AppComponent {
     checkNumber: number = 0;
 
-    // constructor(cd: ChangeDetectorRef){
-    //     cd.detach();
-    // }
+    constructor(private logger: LogService){    }
 
     ngAfterViewChecked() {
-        console.log(`------------------${this.checkNumber++}------------------`);
+        // console.log(`------------------${this.checkNumber++}------------------`);
+        this.logger.log(`------------------${this.checkNumber++}------------------`)
     }
 }
