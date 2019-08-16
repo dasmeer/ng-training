@@ -1,12 +1,25 @@
 <div class="component-body">
-    <h1>DEFAULT</h1>
-    <div class="control">
-        <input type="checkbox" [(ngModel)]="loggerIsOn" id="loggerIsOn"><label for="loggerIsOn">loggerIsOn?</label>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">DEFAULT</h5>
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="loggerIsOn" [(ngModel)]="loggerIsOn">
+                <label class="custom-control-label" for="loggerIsOn">loggerIsOn?</label>
+            </div>
+            <div class="input-group mb-2 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="person.Name">
+            </div>
+            <div class="input-group mb-3 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Age</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="person.Age">
+            </div>
+            <div> {{person.Name}}, {{person.Age}} </div>
+            {{runChangeDetection}}
+        </div>
     </div>
-    <div>Name</div>
-    <input [(ngModel)]="person.Name" />
-    <div>Age</div>
-    <input [value]="person.Age" (input)="person.Age = $event.target.value" />
-    <div> {{person.Name}}, {{person.Age}} </div>
-    {{runChangeDetection}}
 </div>

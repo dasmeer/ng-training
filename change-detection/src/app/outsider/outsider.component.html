@@ -1,12 +1,24 @@
 <div class="component-body">
-    <h1>OUTSIDER</h1>
-    <div class="control">
-        <button (click)="click()" (mousedown)="mouseDown()">this.person.Age = Math.floor(Math.random() * 100)</button>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">OUTSIDER</h5>
+            <div class="control">
+                <button (click)="onClick()" class="btn btn-info col-sm-12">person.Age = Math.random() * 100;</button>
+            </div>
+            <div class="input-group mb-2 p-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="person.Name">
+            </div>
+            <div class="input-group mb-3 p-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Age</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="person.Age">
+            </div>
+            <div> {{person.Name}}, {{person.Age}} </div>
+            {{runChangeDetection}}
+        </div>
     </div>
-    <div>Name</div>
-    <input [ngModel]="person.Name" />
-    <div>Age</div>
-    <input [ngModel]="person.Age" />
-    <div> {{person.Name}}, {{person.Age}} </div>
-    {{runChangeDetection}}
 </div>
