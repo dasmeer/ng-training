@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { GuestService } from '../guest-list.service';
+import { GuestSecurityService } from '../guest-security.service';
 
 @Component({
     selector: 'app-guest',
@@ -8,13 +8,14 @@ import { GuestService } from '../guest-list.service';
 })
 export class GuestComponent implements OnInit {
     @Input() name: string;
+    initialName: string;
     editMode = false;
     readonly componentName: string = 'guest';
 
-    constructor(private guestService: GuestService) { }
+    constructor(private securityService: GuestSecurityService) { }
 
     throwOut() {
-        this.guestService.throwOutGuest(this.name);
+        this.securityService.throwOutGuest(this.initialName);
     }
 
     edit = () => this.editMode = true;
@@ -22,20 +23,44 @@ export class GuestComponent implements OnInit {
 
     get loggerName() { return `${this.componentName} ${this.name}`; }
 
-    ngOnInit() {
-        console.log(`ngOnInit - ${this.loggerName}`);
-    }
-
-    ngOnDestroy() {
-        console.log(`ngOnDestroy - ${this.loggerName}`);
-    }
-
     ngOnChanges(changes: SimpleChanges) {
         for (let propName in changes) {
             let chng = changes[propName];
             let cur = JSON.stringify(chng.currentValue);
             let prev = JSON.stringify(chng.previousValue);
             console.log(`ngOnChanges - ${this.loggerName} - ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+            this.initialName = chng.currentValue;
+            // let r: Renamer = { name: chng.previousValue, newName: chng.currentValue };
+            // this.registryService.renameGuest(r);
         }
+    }
+
+    ngOnInit() {
+        console.log(`ngOnInit - ${this.loggerName}`);
+    }
+
+    //during every change detection run, immediately after ngOnChanges() and ngOnInit()
+    ngDoCheck() {
+        console.log(`ngDoCheck - ${this.loggerName}`);
+    }
+
+    ngAfterContentInit() {
+        console.log(`ngAfterContentInit - ${this.loggerName}`);
+    }
+
+    ngAfterContentChecked(){
+        console.log(`ngAfterContentChecked - ${this.loggerName}`);
+    }
+
+    ngAfterViewInit(){
+        console.log(`ngAfterViewInit - ${this.loggerName}`);
+    }
+
+    ngAfterViewChecked(){
+        console.log(`ngAfterViewChecked - ${this.loggerName}`);
+    }
+
+    ngOnDestroy() {
+        console.log(`ngOnDestroy - ${this.loggerName}`);
     }
 }
