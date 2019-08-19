@@ -1,2 +1,6 @@
+<input [(ngModel)]="newRow" />
+<button (click)="add()">add</button>
 
-
+<div *ngFor="let row of rows">
+    <app-row [text]="row"></app-row>
+</div>
