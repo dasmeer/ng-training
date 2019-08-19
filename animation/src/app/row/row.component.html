@@ -1,5 +1,8 @@
 <div>
-    <span>{{text}}</span>
-    <button>select</button>
-    <button>delete</button>
+    <div class="text col-sm-3 mr-2 ml-2" [@rowHightlight]="getRowState()">{{text}}</div>
+    <div>
+        <button class="btn btn-info mr-2" (click)="select()" *ngIf="!isSelected">select</button>
+        <button class="btn btn-warning mr-2" (click)="deSelect()" *ngIf="isSelected">deselect</button>
+        <button class="btn btn-danger">delete</button>
+    </div>
 </div>

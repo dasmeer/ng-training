@@ -1,6 +1,15 @@
-<input [(ngModel)]="newRow" />
-<button (click)="add()">add</button>
+<div class="m-2">
+    <input [(ngModel)]="newRow" class="col-sm-3 mr-2" placeholder="fill to add" />
+    <button (click)="add()" class="btn btn-success" *ngIf="newRow">add</button>
+</div>
 
-<div *ngFor="let row of rows">
-    <app-row [text]="row"></app-row>
+<div class="m-2">
+    <input [(ngModel)]="searchRow" class="col-sm-3 mr-2" (keyup)="search()" placeholder="seach" />
+    <!-- <button (click)="add()" class="btn btn-success">seach</button> -->
+</div>
+
+<div class="mt-5">
+    <div *ngFor="let row of rows" class="mb-2">
+        <app-row [text]="row"></app-row>
+    </div>
 </div>
