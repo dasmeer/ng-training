@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SearchService } from './search.service';
-import { Observable } from 'rxjs';
 import { RemoverService } from './remover.service';
 import { RemoveTrigger } from './app.animations';
 

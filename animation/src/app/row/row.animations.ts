@@ -15,7 +15,6 @@ export const HighlightTrigger = trigger('rowHightlight', [
         color: 'black'
     }])),
     state('*', style(commonStyle)),
-    state('void', style({ opacity: 0 })),
     transition('* => not-selected', animate('200ms')),
     transition('* => selected',
         [animate('400ms 50ms ease-in'), style({
@@ -29,6 +28,5 @@ export const HighlightTrigger = trigger('rowHightlight', [
             color: 'black'
         })),
         animate('200ms')]
-    ),
-    transition('void => *', animate('500ms'))
+    )
 ]);

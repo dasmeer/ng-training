@@ -25,6 +25,6 @@ export class RowComponent {
     select = () => this.isSelected = true;
     deSelect = () => this.isSelected = false;
     delete = () => this.remover.remove(this.text);
-    
+
     getRowState = (): string => this.isSelected ? 'selected' : 'not-selected';
 }
