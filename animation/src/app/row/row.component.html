@@ -3,6 +3,6 @@
     <div>
         <button class="btn btn-info mr-2" (click)="select()" *ngIf="!isSelected">select</button>
         <button class="btn btn-warning mr-2" (click)="deSelect()" *ngIf="isSelected">deselect</button>
-        <button class="btn btn-danger">delete</button>
+        <button class="btn btn-danger" (click)="delete()">delete</button>
     </div>
 </div>

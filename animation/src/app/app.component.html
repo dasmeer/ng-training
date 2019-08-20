@@ -9,7 +9,7 @@
 </div>
 
 <div class="mt-5">
-    <div *ngFor="let row of rows" class="mb-2">
+    <div *ngFor="let row of rows" class="mb-2" [@rowRemoved]="row">
         <app-row [text]="row"></app-row>
     </div>
 </div>
