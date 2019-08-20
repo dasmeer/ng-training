@@ -8,7 +8,9 @@
 </div>
 
 <div class="mt-5">
-    <div *ngFor="let row of rows" class="mb-2" [@rowRemoved]="row">
+    <div *ngFor="let row of rows" class="mb-2" [@rowRemoved]="row" 
+        (@rowRemoved.start)="onAnimationEvent($event)"
+        (@rowRemoved.done)="onAnimationEvent($event)">
         <app-row [text]="row"></app-row>
     </div>
 </div>

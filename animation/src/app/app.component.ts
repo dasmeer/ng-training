@@ -16,7 +16,7 @@ export class AppComponent {
 
     constructor(private searchService: SearchService,
         remover: RemoverService) {
-        remover.Removed.subscribe(x => 
+        remover.Removed.subscribe(x =>
             this.rows = this.rows.filter(f => f !== x)
         );
     }
@@ -27,4 +27,8 @@ export class AppComponent {
     }
 
     search = () => this.searchService.search(this.searchRow);
+
+    onAnimationEvent(event: AnimationEvent) {
+        console.log(event);
+    }
 }
