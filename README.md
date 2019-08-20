@@ -29,6 +29,11 @@ ANGULAR LIFE CYCLE HOOKS
 
 ANGULAR ANIMATION
 
+    Enabling the animations module
+    Transition & Triggering
+    Predefined states and wildcard matching
+    Animation callbacks
+
 how to run
 
 0) cd {path}\ng-training\{project-folder}
